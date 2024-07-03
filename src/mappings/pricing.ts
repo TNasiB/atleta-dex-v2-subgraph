@@ -4,10 +4,10 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts/index'
 import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
-const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-const USDC_WETH_PAIR = '0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc' // created 10008355
-const DAI_WETH_PAIR = '0xa478c2975ab1ea89e8196811f51a7b7ade33eb11' // created block 10042267
-const USDT_WETH_PAIR = '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852' // created block 10093341
+const WETH_ADDRESS = '0xe26fea44C00802b9cAe594974c0a6CBCAd5fd863'
+const USDC_WETH_PAIR = '0x5661e3b5856B48c51a50B846A804eD973A39eA3a' // created 10008355
+const DAI_WETH_PAIR = '0xC924467CD6e8Cd0C656B4cc9E91c760014dA901A' // created block 10042267
+const USDT_WETH_PAIR = '0x2f0Ba3E20af9b01D96f15b3B602EDebB84be8700' // created block 10093341
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
@@ -150,7 +150,10 @@ export function getTrackedVolumeUSD(
 
   // both are whitelist tokens, take average of both amounts
   if (WHITELIST.includes(token0.id) && WHITELIST.includes(token1.id)) {
-    return tokenAmount0.times(price0).plus(tokenAmount1.times(price1)).div(BigDecimal.fromString('2'))
+    return tokenAmount0
+      .times(price0)
+      .plus(tokenAmount1.times(price1))
+      .div(BigDecimal.fromString('2'))
   }
 
   // take full value of the whitelisted token amount
