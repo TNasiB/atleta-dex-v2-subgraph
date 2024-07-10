@@ -4,10 +4,10 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts/index'
 import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
-const WETH_ADDRESS = '0xe26fea44C00802b9cAe594974c0a6CBCAd5fd863'
-const USDC_WETH_PAIR = '0x5661e3b5856B48c51a50B846A804eD973A39eA3a' // created 10008355
-const DAI_WETH_PAIR = '0xC924467CD6e8Cd0C656B4cc9E91c760014dA901A' // created block 10042267
-const USDT_WETH_PAIR = '0x2f0Ba3E20af9b01D96f15b3B602EDebB84be8700' // created block 10093341
+const WETH_ADDRESS = '0xe26fea44c00802b9cae594974c0a6cbcad5fd863'
+const USDC_WETH_PAIR = '0x5661e3b5856b48c51a50b846a804ed973a39ea3a' // created 10008355
+const DAI_WETH_PAIR = '0xc924467cd6e8cd0c656b4cc9e91c760014da901a' // created block 10042267
+const USDT_WETH_PAIR = '0x2f0ba3e20af9b01d96f15b3b602edebb84be8700' // created block 10093341
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
@@ -41,10 +41,10 @@ export function getEthPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  '0xe26fea44C00802b9cAe594974c0a6CBCAd5fd863', // WETH
-  '0x22C9955B75C50b5E0Ad73De68F51B9eFb462a9a9', // DAI
-  '0x9f294c5D5dA451E1Fa5c2a654cb6d6e394eFE2Cd', // USDC
-  '0xCDa75276918A66D609a55b04570d7b4015A974A0', // USDT
+  '0xe26fea44c00802b9cae594974c0a6cbcad5fd863', // WETH
+  '0x22c9955b75c50b5e0ad73de68f51b9efb462a9a9', // DAI
+  '0x9f294c5d5da451e1fa5c2a654cb6d6e394efe2cd', // USDC
+  '0xcda75276918a66d609a55b04570d7b4015a974a0', // USDT
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
