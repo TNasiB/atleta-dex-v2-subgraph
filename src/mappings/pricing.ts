@@ -13,7 +13,7 @@ export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
   let daiPair = Pair.load(DAI_WETH_PAIR) // dai is token0
   let usdcPair = Pair.load(USDC_WETH_PAIR) // usdc is token0
-  let usdtPair = Pair.load(USDT_WETH_PAIR) // usdt is token1
+  let usdtPair = Pair.load(USDT_WETH_PAIR) // usdt is token0
 
   // all 3 have been created
   if (daiPair !== null && usdcPair !== null && usdtPair !== null) {
@@ -24,7 +24,7 @@ export function getEthPriceInUSD(): BigDecimal {
     return daiPair.token0Price
       .times(daiWeight)
       .plus(usdcPair.token0Price.times(usdcWeight))
-      .plus(usdtPair.token1Price.times(usdtWeight))
+      .plus(usdtPair.token0Price.times(usdtWeight))
     // dai and USDC have been created
   } else if (daiPair !== null && usdcPair !== null) {
     let totalLiquidityETH = daiPair.reserve1.plus(usdcPair.reserve1)
