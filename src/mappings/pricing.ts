@@ -5,9 +5,9 @@ import { Bundle, Pair, Token } from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ONE_BD, UNTRACKED_PAIRS, ZERO_BD } from './helpers'
 
 const WETH_ADDRESS = '0xe26fea44c00802b9cae594974c0a6cbcad5fd863'
-const USDC_WETH_PAIR = '0x5661e3b5856b48c51a50b846a804ed973a39ea3a' // created 10008355
-const DAI_WETH_PAIR = '0xc924467cd6e8cd0c656b4cc9e91c760014da901a' // created block 10042267
-const USDT_WETH_PAIR = '0x2f0ba3e20af9b01d96f15b3b602edebb84be8700' // created block 10093341
+const USDC_WETH_PAIR = '0xcfd2aa7b0f7f67a85ec7e8041707d98cae0df718' // created 10008355
+const DAI_WETH_PAIR = '0x9061b5494cd9cad558a7c1b88796181d40d521ed' // created block 10042267
+const USDT_WETH_PAIR = '0x480e95b2f95c176291eadbd1e909c7800ca05c3d' // created block 10093341
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
